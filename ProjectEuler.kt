@@ -107,5 +107,31 @@ class ProjectEuler {
 
         return reverseVal
     }
+    
+        @Test
+    fun problem5() {
+        var result = 0
+        var count = 0
+
+        while(true) {
+
+            result++
+            for(j in 20 downTo 1) {
+                if(result%j != 0) {
+                    break
+                }else {
+                    count++
+                }
+            }
+
+            if (count == 20) {
+                break
+            }else {
+                count = 0
+            }
+        }
+        println(result)
+
+    }
 
 }
