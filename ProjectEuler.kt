@@ -134,4 +134,50 @@ class ProjectEuler {
 
     }
 
+    
+    @Test
+    fun problem7() {
+
+        var count = 0
+        var primeNumber = 2
+
+        while(true) {
+            if (getPrimeNumber(primeNumber) == 0 ) {
+                primeNumber++
+            }else if (getPrimeNumber(primeNumber) == primeNumber){
+                println(primeNumber)
+                primeNumber++
+                count++
+            }
+
+            if(count == 10001) {
+                break
+            }
+        }
+
+
+
+
+    }
+
+    fun getPrimeNumber(givenNumber : Int) : Int {
+        var currentResult = 0
+        for (i in 2..givenNumber) {
+            if (givenNumber%i == 0 ) {
+                if (i == givenNumber ) {
+                    currentResult = i
+                }
+                if (currentResult != givenNumber) {
+                    return 0
+                }
+            }
+        }
+
+        if (currentResult == givenNumber) {
+            return currentResult
+        }
+
+        return 0
+    }
+    
 }
