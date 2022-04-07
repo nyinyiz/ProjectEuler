@@ -1,0 +1,19 @@
+fun main() {
+    var stringPath = "okurrrbkurrrb"
+    var result = ""
+
+    for(i in 0..stringPath.length-1) {
+        var count = 0
+        var res = stringPath[i].toString()
+        for( j in 0..stringPath.length-1) {
+            if(stringPath[i] == stringPath[j]) {
+               count += 1
+            }
+        }
+    	res += count.toString()
+        if(!result.contains(res)) {
+			println(res)
+            result += res
+        }
+    }
+}
